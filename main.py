@@ -53,8 +53,13 @@ class Buggy():
             self.set_motor_speeds((0.0,1.0))
         def right(self):
             self.set_motor_speeds((1.0,0.0))
-        def update(self):
-            
+    class Sensor():
+        def __init__(self,number):
+            pass #number1 is pin_a number2 is pin_b
+        def get_distance(self):
+            pass
+        def is_wall(self):
+            pass #True or False
     def __init__(self,x,y):
         self.counter = 0
         self.mode = 0
@@ -139,6 +144,7 @@ class Buggy():
                 neighbours.append(node.position)
             if (x,y+1) == node.position or (x,y-1) == node.position:
                 neighbours.append(node.position)
+        ##########################################
         return neighbours
     def get_next_position(self,know_map):
         lowest = None
