@@ -40,6 +40,21 @@ class Environment():
         self.level.set_goal((9,9))
 
 class Buggy():
+    class Controller():
+        def __init__(self):
+            l_motor, r_motor = (0,0)
+        def set_motor_speeds(self,speeds):
+            l_motor, r_motor = speeds
+        def forward(self):
+            self.set_motor_speeds((1.0,1.0))
+        def stop(self):
+            self.set_motor_speeds((0.0,0.0))
+        def left(self):
+            self.set_motor_speeds((0.0,1.0))
+        def right(self):
+            self.set_motor_speeds((1.0,0.0))
+        def update(self):
+            
     def __init__(self,x,y):
         self.counter = 0
         self.mode = 0
